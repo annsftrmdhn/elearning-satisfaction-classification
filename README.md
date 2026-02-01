@@ -1,169 +1,145 @@
-# 📚 Dashboard Prediksi Kepuasan Pengguna E-Learning
+# Sistem Prediksi Kepuasan Pengguna E-Learning
 
-Dashboard interaktif berbasis Streamlit untuk memprediksi tingkat kepuasan pengguna aplikasi e-learning menggunakan Machine Learning.
+Aplikasi web interaktif untuk menganalisis dan memprediksi tingkat kepuasan pengguna platform e-learning menggunakan algoritma machine learning. Sistem ini dirancang untuk membantu pengelola platform dalam memahami faktor-faktor yang mempengaruhi kepuasan pengguna dan membuat keputusan berbasis data.
 
-## 🎯 Fitur Utama
+## Demo Aplikasi
 
-### 1. **Input Data Interaktif**
-- Form input dengan slider dan selectbox yang user-friendly
-- Validasi input otomatis
-- Preview data input dalam bentuk tabel
+### Halaman Beranda
+![Dashboard Beranda](images/Home.png)
 
-### 2. **Dua Model Machine Learning**
-- **Logistic Regression**: Model baseline yang cepat dan interpretable
-- **Decision Tree**: Model non-linear yang dapat menangkap pola kompleks
+Halaman beranda menampilkan ringkasan kinerja platform secara keseluruhan, termasuk:
+- Statistik utama (total pengguna, tingkat kepuasan, penggunaan harian)
+- Tren kepuasan pengguna dalam 6 bulan terakhir
+- Breakdown penilaian platform berdasarkan kategori
+- Insight dan rekomendasi berdasarkan data
 
-### 3. **Visualisasi yang Menarik**
-- 📊 **Gauge Chart**: Menampilkan tingkat kepercayaan prediksi
-- 📈 **Bar Chart**: Perbandingan fitur input
-- 🎨 **Color-coded Results**: Warna berbeda untuk hasil puas/tidak puas
+### Halaman Prediksi
+![Dashboard Prediksi](images/Prediction.png)
 
-### 4. **Interpretasi Hasil Cerdas**
-- Analisis otomatis faktor-faktor yang mempengaruhi kepuasan
-- Rekomendasi berdasarkan input pengguna
-- Detail probabilitas untuk setiap kelas prediksi
+Halaman prediksi memungkinkan pengguna untuk:
+- Input data pengguna melalui form interaktif
+- Memilih model machine learning (Logistic Regression atau Decision Tree)
+- Melihat hasil prediksi beserta tingkat keyakinannya
+- Mendapatkan analisis faktor-faktor yang mempengaruhi prediksi
 
-### 5. **UI/UX Modern**
-- Desain responsive dan profesional
-- Custom CSS styling
-- Animasi dan transisi yang smooth
-- Dark/Light mode support (Streamlit native)
+## Latar Belakang
 
-## 📋 Fitur Input
+Platform e-learning semakin populer sebagai media pembelajaran jarak jauh. Namun, tingkat kepuasan pengguna sangat bervariasi dan dipengaruhi oleh berbagai faktor. Sistem ini dikembangkan untuk:
 
-Dashboard menerima 8 fitur input:
+1. Mengidentifikasi pola yang mempengaruhi kepuasan pengguna
+2. Memprediksi kepuasan pengguna berdasarkan profil dan perilaku mereka
+3. Memberikan insight untuk perbaikan platform
 
-| Fitur | Tipe | Range | Deskripsi |
-|-------|------|-------|-----------|
-| Usia | Numerik | 18-50 tahun | Usia pengguna aplikasi |
-| Jenis Kelamin | Kategorikal | L/P | Jenis kelamin pengguna |
-| Durasi Penggunaan | Numerik | 0-8 jam/hari | Rata-rata durasi penggunaan per hari |
-| Frekuensi Login | Numerik | 1-7 kali/minggu | Jumlah login dalam seminggu |
-| Kualitas Materi | Numerik | 1-5 | Penilaian kualitas materi |
-| Kemudahan Penggunaan | Numerik | 1-5 | Penilaian kemudahan aplikasi |
-| Stabilitas Aplikasi | Numerik | 1-5 | Penilaian stabilitas sistem |
-| Interaksi Pengajar | Numerik | 1-5 | Penilaian interaksi dengan pengajar |
+## Fitur Utama
 
-## 🚀 Cara Instalasi
+### Dashboard Analytics
+- Visualisasi tren kepuasan pengguna
+- Statistik kinerja platform real-time
+- Distribusi pengguna berdasarkan demografi dan perilaku
+- Rekomendasi berbasis data untuk perbaikan platform
 
-### 1. Clone atau Download Project
+### Sistem Prediksi
+- Dua model machine learning (Logistic Regression dan Decision Tree)
+- Interface input yang sederhana dan intuitif
+- Hasil prediksi dengan tingkat keyakinan
+- Analisis faktor-faktor yang mempengaruhi hasil prediksi
 
+### Teknologi
+- **Frontend**: Streamlit dengan custom CSS
+- **Backend**: Python, scikit-learn
+- **Visualisasi**: Plotly
+- **Data Processing**: Pandas, NumPy
+
+## Parameter Input
+
+Sistem menerima 8 parameter untuk melakukan prediksi:
+
+| Parameter | Rentang | Deskripsi |
+|-----------|---------|-----------|
+| Usia | 18-50 tahun | Usia pengguna platform |
+| Jenis Kelamin | L/P | Laki-laki atau Perempuan |
+| Durasi Penggunaan | 0-8 jam/hari | Rata-rata waktu yang dihabiskan di platform |
+| Frekuensi Login | 1-7 kali/minggu | Seberapa sering pengguna mengakses platform |
+| Kualitas Materi | 1-5 | Penilaian terhadap konten pembelajaran |
+| Kemudahan Penggunaan | 1-5 | Penilaian terhadap user interface |
+| Stabilitas Aplikasi | 1-5 | Penilaian terhadap performa teknis |
+| Interaksi Pengajar | 1-5 | Penilaian terhadap responsivitas pengajar |
+
+## Instalasi
+
+### Prasyarat
+- Python 3.8 atau lebih baru
+- pip (Python package manager)
+
+### Langkah Instalasi
+
+1. Clone repository ini
 ```bash
-# Ekstrak file atau clone repository
-cd dashboard-elearning
+git clone <repository-url>
+cd elearning-satisfaction-prediction
 ```
 
-### 2. Install Dependencies
-
+2. Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-Dependencies yang dibutuhkan:
-- `streamlit`: Framework dashboard
-- `pandas`: Manipulasi data
-- `numpy`: Operasi numerik
-- `scikit-learn`: Machine Learning
-- `plotly`: Visualisasi interaktif
+3. Generate dataset (untuk testing)
+```bash
+python generate_dummy_data.py
+```
 
-### 3. Siapkan Dataset
-
-Letakkan file `dataset_kepuasan_pengguna_elearning.csv` di direktori yang sama dengan script.
-
-## 🎓 Cara Penggunaan
-
-### Step 1: Training Model
-
-Sebelum menjalankan dashboard, train model terlebih dahulu:
-
+4. Training model
 ```bash
 python train_model.py
 ```
 
-Script ini akan:
-- ✅ Load dan preprocess dataset
-- ✅ Train model Logistic Regression
-- ✅ Train model Decision Tree
-- ✅ Save model dan preprocessor (.pkl files)
-- ✅ Menampilkan performance metrics
-
-Output yang dihasilkan:
-- `logreg_model.pkl` - Model Logistic Regression
-- `dt_model.pkl` - Model Decision Tree
-- `scaler.pkl` - StandardScaler untuk normalisasi
-- `label_encoder.pkl` - LabelEncoder untuk jenis kelamin
-
-### Step 2: Jalankan Dashboard
-
+5. Jalankan aplikasi
 ```bash
 streamlit run app.py
 ```
 
-Dashboard akan terbuka di browser pada `http://localhost:8501`
+Aplikasi akan terbuka di browser pada alamat `http://localhost:8501`
 
-### Step 3: Gunakan Dashboard
+## Cara Penggunaan
 
-1. **Pilih Model**: Pilih antara Logistic Regression atau Decision Tree
-2. **Input Data**: Atur parameter di sidebar
-   - Data demografis (usia, jenis kelamin)
-   - Pola penggunaan (durasi, frekuensi)
-   - Penilaian aplikasi (4 fitur)
-3. **Klik Prediksi**: Tekan tombol "🔮 Prediksi Kepuasan"
-4. **Lihat Hasil**: 
-   - Status kepuasan (Puas/Tidak Puas)
-   - Gauge chart tingkat kepercayaan
-   - Interpretasi hasil
-   - Detail probabilitas
+### Melihat Dashboard Analytics
+1. Buka aplikasi di browser
+2. Klik tab "Beranda" 
+3. Lihat berbagai visualisasi dan insight yang tersedia
 
-## 📊 Output Dashboard
+### Melakukan Prediksi
+1. Klik tab "Prediksi"
+2. Pilih model yang ingin digunakan
+3. Atur parameter di sidebar sesuai data pengguna
+4. Klik tombol "Prediksi"
+5. Lihat hasil prediksi dan analisisnya
 
-### 1. Hasil Prediksi
-- **Status Kepuasan**: Box berwarna dengan emoji
-  - 😊 Hijau untuk Puas
-  - 😞 Merah untuk Tidak Puas
-- **Gauge Chart**: Visualisasi probabilitas 0-100%
-- **Confidence Level**: Persentase kepercayaan model
-
-### 2. Interpretasi
-- Analisis faktor-faktor penting
-- Rekomendasi berdasarkan input
-- Insight tentang kekuatan dan kelemahan
-
-### 3. Visualisasi Tambahan
-- Bar chart penilaian fitur
-- Distribusi probabilitas
-- Timeline prediksi
-
-## 🔧 Struktur File
-
-```
-dashboard-elearning/
-│
-├── app.py                          # Main dashboard application
-├── train_model.py                  # Script untuk training model
-├── requirements.txt                # Python dependencies
-├── README.md                       # Dokumentasi (file ini)
-│
-├── dataset_kepuasan_pengguna_elearning.csv  # Dataset (perlu disiapkan)
-│
-└── (Generated files setelah training)
-    ├── logreg_model.pkl           # Logistic Regression model
-    ├── dt_model.pkl               # Decision Tree model
-    ├── scaler.pkl                 # StandardScaler
-    └── label_encoder.pkl          # LabelEncoder
-```
-
-## 🧪 Model Performance
+## Model Machine Learning
 
 ### Logistic Regression
-- ✅ Fast inference
-- ✅ Interpretable coefficients
-- ✅ Good for linear patterns
-- ✅ Probability calibration
+Model statistik yang menggunakan fungsi logistik untuk memodelkan probabilitas kelas. Cocok untuk memahami hubungan linear antar fitur dan hasil prediksi.
 
 ### Decision Tree
-- ✅ Non-linear patterns
-- ✅ Feature importance
-- ✅ Easy to interpret rules
-- ✅ No feature scaling needed
+Model berbasis pohon keputusan yang membagi data berdasarkan aturan if-then. Mampu menangkap pola non-linear dalam data.
+
+## Struktur Project
+
+```
+elearning-satisfaction-prediction/
+│
+├── app.py                                      # Aplikasi utama
+├── train_model.py                              # Script training model
+├── generate_dummy_data.py                      # Generator dataset dummy
+├── requirements.txt                            # Dependencies
+├── README.md                                   # Dokumentasi
+│
+├── dataset_kepuasan_pengguna_elearning.csv    # Dataset (generated)
+│
+└── Model files (generated setelah training):
+    ├── logreg_model.pkl
+    ├── dt_model.pkl
+    ├── scaler.pkl
+    └── label_encoder.pkl
+```
 
